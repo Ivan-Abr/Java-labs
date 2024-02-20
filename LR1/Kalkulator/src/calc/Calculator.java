@@ -3,6 +3,8 @@ import calc.operation.Adder;
 import calc.operation.Subtractor;
 import calc.operation.Multiplier;
 import calc.operation.Divider;
+import calc.operation.LeftDrift;
+
 
 public class Calculator{
 	public int sum(int... a){
@@ -21,7 +23,7 @@ public class Calculator{
 		return subtractor.getDiff();
 	}
 	
-	public mult(int... a){
+	public int mult(int... a){
 		Multiplier multiplier = new Multiplier(a[0]);
 		for (int i = 1; i < a.length; ++i){
 			multiplier.mult(a[i]);
@@ -37,6 +39,14 @@ public class Calculator{
 		}
 		return divider.getDiv();	
 	}
+	
+	public int drift(int a){
+		LeftDrift leftDrift  = new LeftDrift();
+		leftDrift.leftdr(a);
+		return leftDrift.getDrift();
+	}
+	
+	
 }
 
 
